@@ -181,15 +181,15 @@ body {
 
 @keyframes orbit {
   from {
-    transform: rotate(0deg) translateX(110px) rotate(0deg);
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
   }
   to {
-    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+    transform: rotate(360deg) translateX(130px) rotate(-360deg);
   }
 }
 
 .animate-orbit {
-  animation: orbit 4s linear infinite;
+  animation: orbit 6s linear infinite;
 }
 
 .animate-spin-slow {

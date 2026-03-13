@@ -15,8 +15,9 @@ export default function Navbar() {
       w-full
       z-50
       backdrop-blur-xl
-      bg-background/70
+      bg-background/80
       border-b border-border/60
+      shadow-[0_4px_30px_rgba(0,0,0,0.3)]
       "
     >
       <nav
@@ -104,8 +105,9 @@ export default function Navbar() {
           py-8
           text-lg
           text-muted
-          bg-background/95
-          backdrop-blur
+          bg-background
+          backdrop-blur-xl
+          shadow-2xl
           "
         >
           <MobileLink href="/" setOpen={setOpen}>Home</MobileLink>
