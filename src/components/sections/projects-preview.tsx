@@ -23,8 +23,7 @@ export default function ProjectsPreview() {
             </h2>
 
             <p className="text-muted mt-3 max-w-lg">
-              A selection of projects focused on scalable web
-              applications and healthcare technology.
+              A selection of projects built with modern web technologies and full-stack development practices.
             </p>
           </div>
 

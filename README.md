@@ -8,7 +8,7 @@ Built with a modern tech stack using **Next.js, TypeScript, and Tailwind CSS**.
 
 ## Live Demo
 
-
+https://egaherawati.vercel.app/
 
 ---
 
@@ -80,11 +80,13 @@ npm run start
 
 ## Contact
 
-If you are interested in collaboration or have any questions:
+Interested in collaboration, opportunities, or have a question?
 
-Instagram: https://www.instagram.com/egaherawati10?igsh=cWF1NnFyNGZqa2tp
-LinkedIn: https://www.linkedin.com/in/egaherawati10/
-GitHub: https://github.com/egaherawati10
+You can reach out through the **contact form on the website** or connect with me on the platforms below:
+ 
+- GitHub: https://github.com/egaherawati10
+- Instagram: https://www.instagram.com/egaherawati10
+- LinkedIn: https://www.linkedin.com/in/egaherawati10/
 
 ---
 

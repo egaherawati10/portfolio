@@ -8,15 +8,11 @@ export default function AboutHero() {
       </h1>
 
       <p className="text-(--text-muted) leading-relaxed text-lg">
-        I am a medical doctor pursuing a full-stack software engineering
-        bootcamp at RevoU, focused on building digital solutions for
-        healthcare systems.
+        I am a medical doctor who completed the Full-Stack Software Engineering Bootcamp at RevoU.
       </p>
 
-      <p className="text-(--text-muted) leading-relaxed">
-        I combine medical domain expertise with structured software
-        engineering practices to build secure, scalable, and impactful
-        digital products.
+      <p className="text-(--text-muted) leading-relaxed text-lg">
+        I combine analytical thinking and domain expertise with modern software engineering practices to build scalable, reliable, and impactful digital products.
       </p>
 
     </section>

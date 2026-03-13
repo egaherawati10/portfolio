@@ -21,7 +21,7 @@ export default function AboutPreview() {
           </h2>
 
           <p className="text-muted mt-6 leading-relaxed">
-            I am a medical doctor pursuing a full-stack software engineering bootcamp at RevoU to advance healthcare digitalization. I bring a disciplined, integrity-driven approach with strong data-informed decision-making and cross-functional collaboration skills.
+            I am a medical doctor who transitioned into software engineering after completing the Full-Stack Software Engineering Bootcamp at RevoU. I enjoy building modern web applications with a focus on scalability, reliability, and thoughtful problem solving.
           </p>
 
           <a
