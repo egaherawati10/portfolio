@@ -156,7 +156,7 @@ export default function ContactPage() {
                   w-full
                   p-3
                   text-sm
-                  text-white
+                  text-text
                   bg-background
                   border border-border
                   rounded-lg
@@ -167,23 +167,23 @@ export default function ContactPage() {
                   transition
                   "
                 >
-                  <option value="" disabled className="text-black">
+                  <option value="" disabled>
                     Select Inquiry
                   </option>
 
-                  <option value="collaboration" className="text-black">
+                  <option value="collaboration">
                     Collaboration
                   </option>
 
-                  <option value="project" className="text-black">
+                  <option value="project">
                     Project Proposal
                   </option>
 
-                  <option value="job" className="text-black">
+                  <option value="job">
                     Job Opportunity
                   </option>
 
-                  <option value="general" className="text-black">
+                  <option value="general">
                     General Question
                   </option>
 
