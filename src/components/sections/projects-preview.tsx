@@ -9,7 +9,7 @@ export default function ProjectsPreview() {
   return (
     <section id="projects-preview" className="bg-background relative">
 
-      <GridBackground opacity={0.08} />
+      <GridBackground opacity={0.015} />
 
       <div className="max-w-6xl mx-auto px-6 relative">
 

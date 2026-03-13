@@ -65,7 +65,7 @@ export default function Hero() {
               <a
                 href="/file/CV-Ega-Herawati.pdf"
                 download
-                className="px-6 py-3 rounded-lg bg-primary text-white"
+                className="px-6 py-3 rounded-lg bg-primary text-slate-900 font-medium hover:bg-primary/10 transition"
               >
                 Download CV
               </a>

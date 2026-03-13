@@ -20,7 +20,7 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-      <section className="py-24 px-6 bg-slate-900/40">
+      <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <ProjectsPreview />
         </div>

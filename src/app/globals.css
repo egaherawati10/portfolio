@@ -22,13 +22,15 @@
   --grid: rgba(148,163,184,0.18);
 }
 
-/* Light Theme */
+/* =========================
+   Light Theme
+========================= */
 
 .light {
 
   color-scheme: light;
 
-  --bg: #F1F5F9;
+  --bg: #F8FAFC;
   --surface: #FFFFFF;
 
   --text: #0F172A;
@@ -39,7 +41,7 @@
   --primary: #0D9488;
   --secondary: #0284C7;
 
-  --grid: rgba(148,163,184,0.12);
+  --grid: rgba(148,163,184,0.08);
 }
 
 /* =========================
@@ -76,6 +78,79 @@ body {
 }
 
 /* =========================
+   Button Fix
+========================= */
+
+a.bg-primary,
+button.bg-primary {
+
+  color: var(--primary); /* FIX */
+
+  border: 1px solid transparent;
+
+  box-shadow:
+    0 6px 18px rgba(20,184,166,0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+a.bg-primary:hover,
+button.bg-primary:hover {
+
+  transform: translateY(-1px);
+
+  border-color: var(--primary); /* FIX */
+
+  box-shadow:
+    0 8px 24px rgba(20,184,166,0.35);
+}
+
+/* =========================
+   Outline Button
+========================= */
+
+.btn-outline {
+
+  color: var(--text);
+
+  border: 1px solid transparent; /* FIX */
+
+  background: transparent;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-outline:hover {
+
+  color: var(--primary);
+
+  border-color: var(--primary); /* FIX */
+
+  box-shadow: 0 6px 18px rgba(20,184,166,0.25);
+
+  transform: translateY(-1px);
+}
+
+.btn-outline:hover {
+
+  color: var(--primary);
+
+  border-color: var(--primary);
+
+  box-shadow: 0 6px 18px rgba(20,184,166,0.25);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
    Form Elements
 ========================= */
 
@@ -99,7 +174,6 @@ select {
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     background-color 0.2s ease;
-
 }
 
 /* Placeholder */
@@ -129,7 +203,6 @@ select:focus {
   box-shadow:
     0 0 0 1px var(--primary),
     0 0 10px rgba(20,184,166,0.15);
-
 }
 
 /* =========================
