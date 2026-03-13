@@ -20,8 +20,8 @@ export default function HeroBackground() {
         className="absolute inset-0 opacity-[0.04] animate-grid"
         style={{
           backgroundImage: `
-            linear-gradient(to right, #94a3b8 1px, transparent 1px),
-            linear-gradient(to bottom, #94a3b8 1px, transparent 1px)
+            linear-gradient(to right, var(--grid) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid) 1px, transparent 1px)
           `,
           backgroundSize: "52px 52px",
         }}

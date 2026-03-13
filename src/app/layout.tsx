@@ -8,6 +8,7 @@ import PageLoader from "@/components/loader/PageLoader"
 import { Toaster } from "react-hot-toast"
 
 import { Orbitron, Inter, JetBrains_Mono } from "next/font/google"
+import ThemeProvider from "@/components/theme-provider"
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -36,8 +37,32 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <html lang="en" suppressHydrationWarning>
+      
+      {/* Anti Theme Flicker */}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function() {
+  try {
+    const storage = localStorage.getItem("theme-storage");
+    if (!storage) return;
 
-    <html lang="en" className="dark" suppressHydrationWarning>
+    const parsed = JSON.parse(storage);
+    const theme = parsed?.state?.theme;
+
+    if (theme === "light") {
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+    }
+  } catch (e) {}
+})();
+            `,
+          }}
+        />
+      </head>
 
       <body
         className={`
@@ -47,38 +72,38 @@ export default function RootLayout({
 
           font-body
           antialiased
-
           min-h-dvh
           flex
           flex-col
         `}
       >
+        <ThemeProvider>
 
-        <PageLoader>
+          <PageLoader>
 
-          <Navbar />
+            <Navbar />
 
-          <main className="flex-1 pt-16">
-            {children}
-          </main>
+            <main className="flex-1 pt-16">
+              {children}
+            </main>
 
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: "#1E293B",
-                color: "#F8FAFC",
-              },
-            }}
-          />
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                style: {
+                  background: "#1E293B",
+                  color: "#F8FAFC",
+                },
+              }}
+            />
 
-          <Footer />
+            <Footer />
 
-        </PageLoader>
+          </PageLoader>
 
+        </ThemeProvider>
       </body>
 
     </html>
-
   )
 }

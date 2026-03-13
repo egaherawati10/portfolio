@@ -6,7 +6,6 @@ type Props = {
 
 export default function GridBackground({ opacity = 0.04 }: Props) {
   return (
-
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
       <div
@@ -14,14 +13,13 @@ export default function GridBackground({ opacity = 0.04 }: Props) {
         style={{
           opacity,
           backgroundImage: `
-            linear-gradient(to right, #94a3b8 1px, transparent 1px),
-            linear-gradient(to bottom, #94a3b8 1px, transparent 1px)
+            linear-gradient(to right, var(--grid) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid) 1px, transparent 1px)
           `,
           backgroundSize: "52px 52px",
         }}
       />
 
     </div>
-
   )
 }

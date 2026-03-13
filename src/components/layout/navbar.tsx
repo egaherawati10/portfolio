@@ -4,6 +4,8 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
+import ThemeToggle from "@/components/ui/theme-toggle"
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
@@ -31,7 +33,6 @@ export default function Navbar() {
         h-16
         "
       >
-
         {/* Logo */}
 
         <Link href="/" className="flex items-center gap-3 group">
@@ -66,23 +67,31 @@ export default function Navbar() {
           <NavLink href="/about">About</NavLink>
           <NavLink href="/projects">Projects</NavLink>
           <NavLink href="/contact">Contact</NavLink>
+
+          {/* Theme Toggle */}
+
+          <ThemeToggle />
         </div>
 
-        {/* Burger Button */}
+        {/* Right Controls (Mobile) */}
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="
-          md:hidden
-          text-text
-          text-2xl
-          leading-none
-          "
-          aria-label="Toggle Menu"
-        >
-          {open ? "✕" : "☰"}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
 
+          <button
+            onClick={() => setOpen(!open)}
+            className="
+            text-text
+            text-2xl
+            leading-none
+            transition
+            hover:text-(--primary)
+            "
+            aria-label="Toggle Menu"
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -93,14 +102,14 @@ export default function Navbar() {
         transition-all
         duration-300
         overflow-hidden
-        ${open ? "max-h-64 border-t border-border" : "max-h-0"}
+        ${open ? "max-h-80 border-t border-border/60" : "max-h-0"}
         `}
       >
         <div
           className="
           flex
           flex-col
-          gap-2
+          gap-3
           px-6
           py-8
           text-lg
@@ -116,7 +125,6 @@ export default function Navbar() {
           <MobileLink href="/contact" setOpen={setOpen}>Contact</MobileLink>
         </div>
       </div>
-
     </header>
   )
 }

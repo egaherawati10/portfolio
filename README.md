@@ -1,8 +1,10 @@
 # Ega Herawati
 
-Personal portfolio website showcasing projects, skills, and experience in **Fullstack Software Engineering** with a focus on **technology-driven healthcare solutions**.
+Personal portfolio website showcasing projects, skills, and experience in **Full-Stack Software Engineering**.
 
-Built with a modern tech stack using **Next.js, TypeScript, and Tailwind CSS**.
+The site highlights selected projects and technical capabilities, reflecting a transition from **medicine to software engineering** and a problem-solving mindset shaped by clinical training and modern software development practices.
+
+Built using **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
 ---
 
@@ -14,25 +16,44 @@ https://egaherawati.vercel.app/
 
 ## Tech Stack
 
-* Next.js (App Router)
-* TypeScript
-* Tailwind CSS
-* React Hook Form
-* Zod
-* Lucide Icons
-* React Hot Toast
+* **Next.js (App Router)**
+* **TypeScript**
+* **Tailwind CSS**
+* **Zustand** – global state management
+* **React Hook Form** – form handling
+* **Zod** – schema validation
+* **Lucide Icons**
+* **React Hot Toast**
 
 ---
 
 ## Features
 
-* Modern responsive portfolio design
-* Project showcase with tech stack preview
+### Portfolio
+
+* Modern responsive portfolio layout
+* Project showcase with technology stack preview
 * Experience timeline
 * Certificate section
-* Contact form with validation
 * Downloadable CV
-* Mobile responsive navigation
+
+### UI / UX
+
+* Responsive navigation with mobile menu
+* Animated grid and hero background
+* Custom Raven system loading screen
+* Subtle UI animations and hover interactions
+
+### Theme System
+
+* Dark / Light mode toggle
+* Theme preference persistence using **Zustand + localStorage**
+* Anti-theme-flicker script for seamless page reload
+
+### Contact
+
+* Contact form with validation using **React Hook Form + Zod**
+* Toast notifications for form feedback
 
 ---
 
@@ -50,7 +71,7 @@ Install dependencies
 npm install
 ```
 
-Run development server
+Run the development server
 
 ```
 npm run dev
@@ -66,11 +87,13 @@ http://localhost:3000
 
 ## Build for Production
 
+Build the application
+
 ```
 npm run build
 ```
 
-Run production server
+Start the production server
 
 ```
 npm run start
@@ -83,13 +106,18 @@ npm run start
 Interested in collaboration, opportunities, or have a question?
 
 You can reach out through the **contact form on the website** or connect with me on the platforms below:
- 
-- GitHub: https://github.com/egaherawati10
-- Instagram: https://www.instagram.com/egaherawati10
-- LinkedIn: https://www.linkedin.com/in/egaherawati10/
+
+* GitHub
+  https://github.com/egaherawati10
+
+* Instagram
+  https://www.instagram.com/egaherawati10
+
+* LinkedIn
+  https://www.linkedin.com/in/egaherawati10/
 
 ---
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the **MIT License**.
