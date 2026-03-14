@@ -73,7 +73,7 @@ export default function Timeline() {
             title="Medical Doctor"
             subtitle="Permata Hospital"
             details={[
-              "Collaborated with multidisciplinary teams to standardize care protocols and leverage shared data insights, increasing holistic patient care adoption by approximately 98% across services",
+              "Managed high-acuity emergency cases by adhering to clinical guidelines, conducting risk assessments, and making timely clinical decisions in fast-paced environments",
               "Acted as Secretary of the Credential Committee at the hospital, supporting credentialing processes and clinical governance"
             ]}
           />

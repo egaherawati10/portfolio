@@ -4,7 +4,8 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function ProjectsPreview() {
-  const previewProjects = projects.slice(0, 3)
+
+  const previewProjects = projects.slice(0, 2)
 
   return (
     <section id="projects-preview" className="bg-background relative">
@@ -15,29 +16,15 @@ export default function ProjectsPreview() {
 
         {/* Header */}
 
-        <div className="mb-12 flex items-end justify-between">
+        <div className="mb-12">
 
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-text">
-              Selected Projects
-            </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text">
+            Selected Projects
+          </h2>
 
-            <p className="text-muted mt-3 max-w-lg">
-              A selection of projects built with modern web technologies and full-stack development practices.
-            </p>
-          </div>
-
-          <Link
-            href="/#projects"
-            className="
-            text-sm
-            text-primary
-            hover:underline
-            hidden md:block
-            "
-          >
-            View all projects →
-          </Link>
+          <p className="text-muted mt-3 max-w-lg">
+            A selection of projects built with modern web technologies and full-stack development practices.
+          </p>
 
         </div>
 
@@ -62,9 +49,9 @@ export default function ProjectsPreview() {
               "
             >
 
-              {/* Image Slot */}
+              {/* Image */}
 
-              <div className="relative w-full h-40 bg-muted/20">
+              <div className="relative w-full h-40 bg-muted/20 overflow-hidden">
 
                 <Image
                   src={project.gallery?.[0] || "/projects/placeholder.png"}
@@ -98,21 +85,36 @@ export default function ProjectsPreview() {
 
           ))}
 
-        </div>
-
-        {/* Mobile View All */}
-
-        <div className="mt-8 md:hidden">
+          {/* View All Projects Card */}
 
           <Link
-            href="/#projects"
+            href="/projects"
             className="
-            text-primary
-            text-sm
-            hover:underline
+            group
+            flex
+            items-center
+            justify-center
+            text-center
+            bg-surface
+            rounded-xl
+            hover:border-primary
+            transition
+            p-6
             "
           >
-            View all projects →
+
+            <div>
+
+              <p className="font-semibold text-text group-hover:text-primary transition">
+                View All Projects →
+              </p>
+
+              <p className="text-muted text-sm mt-2">
+                Explore the full project collection
+              </p>
+
+            </div>
+
           </Link>
 
         </div>
