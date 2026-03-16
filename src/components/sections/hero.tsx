@@ -88,7 +88,7 @@ export default function Hero() {
               alt="HealthTech Raven Logo"
               width={420}
               height={420}
-              className="w-65 md:w-md:w-85-[420px] h-auto"
+              className="w-64 md:w-80 lg:w-105"
               priority
             />
 

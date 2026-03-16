@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -9,114 +9,148 @@ import ThemeToggle from "@/components/ui/theme-toggle"
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : ""
+  }, [open])
+
   return (
-    <header
-      className="
-      fixed
-      top-0
-      w-full
-      z-50
-      backdrop-blur-xl
-      bg-background/80
-      border-b border-border/60
-      shadow-[0_4px_30px_rgba(0,0,0,0.3)]
-      "
-    >
-      <nav
+    <>
+      {/* NAVBAR */}
+
+      <header
         className="
-        max-w-6xl
-        mx-auto
-        px-6
-        flex
-        items-center
-        justify-between
-        h-16
+        fixed
+        top-0
+        w-full
+        z-50
+        backdrop-blur-xl
+        bg-background/80
+        border-b border-border/60
+        shadow-[0_4px_30px_rgba(0,0,0,0.3)]
         "
       >
-        {/* Logo */}
-
-        <Link href="/" className="flex items-center gap-3 group">
-          <Image
-            src="/logo.png"
-            alt="HealthTech Raven Logo"
-            width={42}
-            height={42}
-            priority
-            className="
-            transition
-            duration-300
-            group-hover:scale-105
-            group-hover:drop-shadow-[0_0_10px_rgba(20,184,166,0.6)]
-            "
-          />
-        </Link>
-
-        {/* Desktop Menu */}
-
-        <div
+        <nav
           className="
-          hidden md:flex
+          max-w-6xl
+          mx-auto
+          px-6
+          flex
           items-center
-          gap-8
-          text-sm
-          font-medium
-          text-muted
+          justify-between
+          h-16
           "
         >
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/projects">Projects</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+          {/* Logo */}
 
-          {/* Theme Toggle */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/logo.png"
+              alt="HealthTech Raven Logo"
+              width={42}
+              height={42}
+              priority
+              className="
+              transition
+              duration-300
+              group-hover:scale-105
+              group-hover:drop-shadow-[0_0_10px_rgba(20,184,166,0.6)]
+              "
+            />
+          </Link>
 
-          <ThemeToggle />
-        </div>
+          {/* Desktop Menu */}
 
-        {/* Right Controls (Mobile) */}
-
-        <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
-
-          <button
-            onClick={() => setOpen(!open)}
+          <div
             className="
-            text-text
-            text-2xl
-            leading-none
-            transition
-            hover:text-(--primary)
+            hidden md:flex
+            items-center
+            gap-8
+            text-sm
+            font-medium
+            text-muted
             "
-            aria-label="Toggle Menu"
           >
-            {open ? "✕" : "☰"}
-          </button>
-        </div>
-      </nav>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/about">About</NavLink>
+            <NavLink href="/projects">Projects</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
 
-      {/* Mobile Menu */}
+            <ThemeToggle />
+          </div>
+
+          {/* Mobile Controls */}
+
+          <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="
+              text-text
+              text-2xl
+              leading-none
+              transition
+              "
+              aria-label="Toggle Menu"
+            >
+              {open ? "✕" : "☰"}
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* MOBILE MENU */}
 
       <div
         className={`
         md:hidden
+        fixed
+        top-16
+        left-0
+        w-full
+        h-[calc(100vh-4rem)]
+        z-40
         transition-all
         duration-300
-        overflow-hidden
-        ${open ? "max-h-80 border-t border-border/60" : "max-h-0"}
+        ease-out
+        ${
+          open
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        }
         `}
       >
+        {/* Glass Overlay */}
+
         <div
           className="
+          absolute
+          inset-0
+          backdrop-blur-3xl
+          bg-gradient-to-b
+          from-white/40
+          via-white/50
+          to-white/70
+          dark:from-black/40
+          dark:via-black/50
+          dark:to-black/70
+          border-t border-white/10 dark:border-white/5
+          "
+        />
+
+        {/* Mobile Links */}
+
+        <div
+          className="
+          relative
+          px-6
+          py-10
           flex
           flex-col
-          gap-3
-          px-6
-          py-8
-          text-lg
-          text-muted
-          bg-background
-          backdrop-blur-xl
-          shadow-2xl
+          gap-8
+          text-xl
+          font-medium
+          text-text
           "
         >
           <MobileLink href="/" setOpen={setOpen}>Home</MobileLink>
@@ -125,7 +159,7 @@ export default function Navbar() {
           <MobileLink href="/contact" setOpen={setOpen}>Contact</MobileLink>
         </div>
       </div>
-    </header>
+    </>
   )
 }
 
@@ -141,17 +175,17 @@ function NavLink({
       href={href}
       className="
       relative
-      hover:text-(--primary)
-      hover:drop-shadow-[0_0_6px_rgba(20,184,166,0.7)]
-      transition-all
+      inline-block
+      w-fit
+      transition-colors
       duration-200
 
       after:absolute
       after:left-0
       after:-bottom-1
-      after:h-0.5
+      after:h-[2px]
       after:w-0
-      after:bg-(--primary)
+      after:bg-current
       after:transition-all
       after:duration-300
 
@@ -177,9 +211,22 @@ function MobileLink({
       href={href}
       onClick={() => setOpen(false)}
       className="
-      hover:text-(--primary)
+      relative
+      inline-block
+      w-fit
       transition-colors
       duration-200
+
+      after:absolute
+      after:left-0
+      after:-bottom-1
+      after:h-[2px]
+      after:w-0
+      after:bg-current
+      after:transition-all
+      after:duration-300
+
+      hover:after:w-full
       "
     >
       {children}
